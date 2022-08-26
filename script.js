@@ -15,17 +15,25 @@ let result;
 function readFirstNumber() {
   firstnumber = parseFloat(document.querySelector("#firstnumber").value);
   console.log(firstnumber);
+  if (firstnumber && secondnumber && operator != undefined) {
+    calculate();
+  }
 }
 
 function readSecondNumber() {
   secondnumber = parseFloat(document.querySelector("#secondnumber").value);
   console.log(secondnumber);
+  if (firstnumber && secondnumber && operator != undefined) {
+    calculate();
+  }
 }
 
 function readOperator() {
   operator = document.querySelector("#operator").value;
   console.log(operator);
-  calculate();
+  if (firstnumber && secondnumber && operator != undefined) {
+    calculate();
+  }
 }
 
 function calculate() {
