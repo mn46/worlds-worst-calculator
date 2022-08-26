@@ -17,6 +17,7 @@ let newResult;
 function readFirstNumber() {
   firstnumber = parseFloat(document.querySelector("#firstnumber").value);
   console.log(firstnumber);
+  //   making sure that all variables have a value
   if (firstnumber && secondnumber && operator != undefined) {
     calculate();
   }
@@ -25,6 +26,7 @@ function readFirstNumber() {
 function readSecondNumber() {
   secondnumber = parseFloat(document.querySelector("#secondnumber").value);
   console.log(secondnumber);
+  //   making sure that all variables have a value
   if (firstnumber && secondnumber && operator != undefined) {
     calculate();
   }
@@ -33,6 +35,7 @@ function readSecondNumber() {
 function readOperator() {
   operator = document.querySelector("#operator").value;
   console.log(operator);
+  //   making sure that all variables have a value
   if (firstnumber && secondnumber && operator != undefined) {
     calculate();
   }
@@ -60,7 +63,12 @@ function calculate() {
 
 function roundResult() {
   decPlace = parseInt(document.querySelector("#decimals").value);
-  newResult = result.toFixed(decPlace);
+  //   rounding to correct number of decimal places
+  if (result > 0) {
+    newResult = parseFloat(result.toFixed(decPlace + 1));
+  } else {
+    newResult = result.toFixed(decPlace);
+  }
   console.log(newResult);
   document.querySelector("#calculate").addEventListener("click", showResult);
 }
