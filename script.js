@@ -53,7 +53,8 @@ function calculate() {
 }
 
 function showResult() {
-  let newLi = document.createElement("li");
-  let seeResult = newLi.appendChild(document.createTextNode(result));
-  document.querySelector("#results").appendChild(seeResult);
+  let newLi = document.createElement("li", result);
+  let seeResult = (newLi.textContent = result);
+  document.querySelector("#results").appendChild(newLi);
+  document.querySelector("#results li:first-child").remove();
 }
