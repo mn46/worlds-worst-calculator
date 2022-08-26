@@ -23,21 +23,19 @@ function readSecondNumber() {
 }
 
 function readOperator() {
-  obtained = toString(document.querySelector("#operator").value);
+  operator = document.querySelector("#operator").value;
   console.log(operator);
   calculate();
 }
 
-function calculate(firstnumber, secondnumber) {
-  //   result = firstnumber + operator + secondnumber;
-
-  if (operator == "add") {
+function calculate() {
+  if (operator === "add") {
     result = firstnumber + secondnumber;
-  } else if (operator == "sub") {
+  } else if (operator === "sub") {
     result = firstnumber - secondnumber;
-  } else if (operator == "mul") {
+  } else if (operator === "mul") {
     result = firstnumber * secondnumber;
-  } else {
+  } else if (operator === "div") {
     result = firstnumber / secondnumber;
   }
 
