@@ -11,6 +11,8 @@ let firstnumber;
 let secondnumber;
 let operator;
 let result;
+let decPlace;
+let newResult;
 
 function readFirstNumber() {
   firstnumber = parseFloat(document.querySelector("#firstnumber").value);
@@ -49,12 +51,29 @@ function calculate() {
 
   console.log(result);
 
+  if (document.querySelector("#doround").checked) {
+    roundResult();
+  } else {
+    document.querySelector("#calculate").addEventListener("click", showResult);
+  }
+}
+
+function roundResult() {
+  decPlace = parseInt(document.querySelector("#decimals").value);
+  newResult = result.toFixed(decPlace);
+  console.log(newResult);
   document.querySelector("#calculate").addEventListener("click", showResult);
 }
 
 function showResult() {
   let newLi = document.createElement("li");
-  newLi.textContent = result;
+
+  if (newResult) {
+    newLi.textContent = newResult;
+  } else {
+    newLi.textContent = result;
+  }
+
   document.querySelector("#results").appendChild(newLi);
   document.querySelector("#results li:first-child").remove();
 }
