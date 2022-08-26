@@ -1,16 +1,16 @@
 start();
 
 function start() {
-  // event listener for click
-  readFirstNumber();
+  document.querySelector("#firstnumber").addEventListener("input", readFirstNumber);
 }
 
-// let firstnumber;
-// let secondnumber;
+let firstnumber;
+let secondnumber;
 
 function readFirstNumber() {
-  // function
-  readSecondNumber();
+  firstnumber = parseInt(document.querySelector("#firstnumber").value);
+  console.log(firstnumber);
+  //   readSecondNumber();
 }
 
 // function readSecondNumber() {
