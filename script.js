@@ -11,6 +11,13 @@ start();
 
 function start() {
   document.querySelector("#calculate").addEventListener("click", readFirstNumber);
+  document.querySelector("#clear").addEventListener("click", clearResults);
+}
+
+function clearResults() {
+  document.querySelectorAll("#results li").forEach((li) => {
+    li.textContent = "";
+  });
 }
 
 function readFirstNumber() {
