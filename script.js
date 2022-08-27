@@ -16,30 +16,18 @@ function start() {
 function readFirstNumber() {
   firstnumber = parseFloat(document.querySelector("#firstnumber").value);
   console.log(firstnumber);
-  //   making sure that all variables have a value
-  // if (firstnumber && secondnumber && operator != undefined) {
-  //   calculate();
-  // }
   readSecondNumber();
 }
 
 function readSecondNumber() {
   secondnumber = parseFloat(document.querySelector("#secondnumber").value);
   console.log(secondnumber);
-  //   making sure that all variables have a value
-  // if (firstnumber && secondnumber && operator != undefined) {
-  //   calculate();
-  // }
   readOperator();
 }
 
 function readOperator() {
   operator = document.querySelector("#operator").value;
   console.log(operator);
-  //   making sure that all variables have a value
-  // if (firstnumber && secondnumber && operator != undefined) {
-  //   calculate();
-  // }
   calculate();
 }
 
@@ -66,7 +54,6 @@ function calculate() {
 
 function roundResult() {
   decPlace = parseInt(document.querySelector("#decimals").value);
-  //   rounding to correct number of decimal places
   newResult = result.toFixed(decPlace);
   console.log(decPlace);
   showResult();
