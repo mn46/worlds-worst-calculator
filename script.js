@@ -71,10 +71,12 @@ function showResult() {
 
   if (newResult) {
     newLi.textContent = newResult;
+    document.querySelector("#firstnumber").value = newResult;
   } else {
     newLi.textContent = result;
+    document.querySelector("#firstnumber").value = result;
   }
 
   document.querySelector("#results").appendChild(newLi);
-  document.querySelector("#results li:first-child").remove();
+  // document.querySelector("#results li:first-child").remove();
 }
