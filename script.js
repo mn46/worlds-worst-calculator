@@ -79,5 +79,4 @@ function showResult() {
 
   document.querySelector("#results").appendChild(newLi);
   document.querySelector("#results").scrollTop = document.querySelector("#results").scrollHeight;
-  // document.querySelector("#results li:first-child").remove();
 }
