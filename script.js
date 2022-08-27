@@ -1,11 +1,4 @@
-start();
-
-function start() {
-  document.querySelector("#firstnumber").addEventListener("input", readFirstNumber);
-  document.querySelector("#secondnumber").addEventListener("input", readSecondNumber);
-  document.querySelector("#operator").addEventListener("change", readOperator);
-  //   maybe if statement instead?
-}
+// variables
 
 let firstnumber;
 let secondnumber;
@@ -14,31 +7,40 @@ let result;
 let decPlace;
 let newResult;
 
+start();
+
+function start() {
+  document.querySelector("#calculate").addEventListener("click", readFirstNumber);
+}
+
 function readFirstNumber() {
   firstnumber = parseFloat(document.querySelector("#firstnumber").value);
   console.log(firstnumber);
   //   making sure that all variables have a value
-  if (firstnumber && secondnumber && operator != undefined) {
-    calculate();
-  }
+  // if (firstnumber && secondnumber && operator != undefined) {
+  //   calculate();
+  // }
+  readSecondNumber();
 }
 
 function readSecondNumber() {
   secondnumber = parseFloat(document.querySelector("#secondnumber").value);
   console.log(secondnumber);
   //   making sure that all variables have a value
-  if (firstnumber && secondnumber && operator != undefined) {
-    calculate();
-  }
+  // if (firstnumber && secondnumber && operator != undefined) {
+  //   calculate();
+  // }
+  readOperator();
 }
 
 function readOperator() {
   operator = document.querySelector("#operator").value;
   console.log(operator);
   //   making sure that all variables have a value
-  if (firstnumber && secondnumber && operator != undefined) {
-    calculate();
-  }
+  // if (firstnumber && secondnumber && operator != undefined) {
+  //   calculate();
+  // }
+  calculate();
 }
 
 function calculate() {
@@ -56,21 +58,18 @@ function calculate() {
 
   if (document.querySelector("#doround").checked) {
     roundResult();
+    console.log("round");
   } else {
-    document.querySelector("#calculate").addEventListener("click", showResult);
+    showResult();
   }
 }
 
 function roundResult() {
   decPlace = parseInt(document.querySelector("#decimals").value);
   //   rounding to correct number of decimal places
-  if (result > 0) {
-    newResult = parseFloat(result.toFixed(decPlace + 1));
-  } else {
-    newResult = result.toFixed(decPlace);
-  }
-  console.log(newResult);
-  document.querySelector("#calculate").addEventListener("click", showResult);
+  newResult = result.toFixed(decPlace);
+  console.log(decPlace);
+  showResult();
 }
 
 function showResult() {
